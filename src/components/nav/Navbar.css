@@ -1,0 +1,131 @@
+.navbar {
+  background-image: linear-gradient(to right, #C60C30, #ffffff 0%, #002868 60%, #ffffff);
+  color: #fff;
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-brand a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar-links {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+}
+
+.navbar-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.navbar-links a:hover {
+  background-image: linear-gradient(to right, #C60C30, #002868);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: perspective(800px) scale(1.2);
+}
+
+.navbar-links a:active,
+.navbar-links a:focus {
+  transform: perspective(800px) scale(1.1);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container:hover {
+  background-image: linear-gradient(to right, #C60C30, #002868);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo {
+  width: 150px;
+  height: 80px;
+  margin-right: 5px;
+  border-radius: 10%;
+}
+
+.company-name {
+  font-size: 18px;
+}
+
+.company-name:hover {
+  color: #2ecc71;
+}
+
+.language-switcher {
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.language-switcher select {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.language-switcher select option {
+  background-color: #333;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-brand,
+  .navbar-links {
+    margin-bottom: 10px;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .navbar-links a {
+    margin-right: 0;
+    margin-bottom: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+    transition: transform 0.3s;
+  }
+
+  .navbar-links a:hover {
+    background-image: linear-gradient(to right, #C60C30, #002868);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transform: perspective(800px) scale(1.2);
+  }
+
+  .navbar-links a:active,
+  .navbar-links a:focus {
+    transform: perspective(800px) scale(1.1);
+  }
+}

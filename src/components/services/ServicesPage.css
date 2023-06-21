@@ -1,0 +1,72 @@
+/* ServicesPage.css */
+
+/* Sidebar styles */
+.sidebar {
+    float: left;
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  /* Service Info styles */
+  .service-info {
+    margin-left: 240px; /* Adjust this value according to your sidebar width */
+    padding: 20px;
+  }
+  
+  .service-title {
+    text-align: center;
+    background-image: url("https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/11/section_bg_01.jpg");
+    background-size: cover;
+    background-position: center;
+    color: rgb(255, 0, 0);
+    padding-bottom: 20px;
+  }
+
+  .page-title__overlay {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(12,182,239,0.5));
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  /* Table styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Adjust the button styles according to your design */
+  
+  

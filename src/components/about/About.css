@@ -1,0 +1,143 @@
+.about-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  position: relative;
+  max-width: 100%;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+.about-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.about-description {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  background-image: linear-gradient(to right, #C60C30, #002868);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  color: black;
+}
+
+.review-card {
+  width: calc(33.33% - 2rem);
+  margin: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.review-card-content {
+  margin-bottom: 1rem;
+}
+
+.review-card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.review-card-description {
+  font-size: 14px;
+  color: #888;
+}
+
+.review-card-author {
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.review-card-rating {
+  font-size: 16px;
+  color: #f4d03f;
+  margin-bottom: 0.5rem;
+}
+
+
+.about-link {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.opening-hours-title{
+  color: #002868;
+  font-size: 30px;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 480px) {
+  .about-content {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  .about-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .about-description {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .about-link {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .about-content {
+    max-width: 90%;
+    padding: 12px;
+  }
+
+  .about-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .about-description {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .about-link {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
