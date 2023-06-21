@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './ServicesPage.css';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const ServicesPage = () => {
+  const { t } = useTranslation();
   const [selectedService, setSelectedService] = useState('Electricity');
   const location = useLocation();
 
@@ -20,392 +22,458 @@ const ServicesPage = () => {
 
   return (
     <div>
-        <h1 className="service-title page-title__overlay">{selectedService}</h1>
+      <h1 className="service-title page-title__overlay">{t(selectedService)}</h1>
       <div className="sidebar">
         <ul>
-          <li onClick={() => handleServiceClick('Electricity')}>Electricity</li>
-          <li onClick={() => handleServiceClick('Heating / AC')}>Heating / AC</li>
-          <li onClick={() => handleServiceClick('Painting')}>Painting</li>
-          <li onClick={() => handleServiceClick('Plumbing')}>Plumbing</li>
-          <li onClick={() => handleServiceClick('Renovation')}>Renovation</li>
-          <li onClick={() => handleServiceClick('Pressure Washing')}>Pressure Washing</li>
-          <li onClick={() => handleServiceClick('Sanitary')}>Sanitary</li>
-          <li onClick={() => handleServiceClick('Drywall')}>Drywall</li>
+          <li onClick={() => handleServiceClick('Electricity')}>{t('servicesPage.electricity')}</li>
+          <li onClick={() => handleServiceClick('Heating / AC')}>{t('servicesPage.heatingAC')}</li>
+          <li onClick={() => handleServiceClick('Painting')}>{t('servicesPage.painting')}</li>
+          <li onClick={() => handleServiceClick('Plumbing')}>{t('servicesPage.plumbing')}</li>
+          <li onClick={() => handleServiceClick('Renovation')}>{t('servicesPage.renovation')}</li>
+          <li onClick={() => handleServiceClick('Pressure Washing')}>{t('servicesPage.pressureWashing')}</li>
+          <li onClick={() => handleServiceClick('Sanitary')}>{t('servicesPage.sanitary')}</li>
+          <li onClick={() => handleServiceClick('Drywall')}>{t('servicesPage.drywall')}</li>
         </ul>
       </div>
       <div className="service-info">
-      {selectedService === 'Electricity' && (
-            <><button onClick={() => handleServiceClick('Heating / AC')}>Next: Heating / AC</button>
-                <h2>Electrical Services</h2>
-                <p>
-                Electricity is the set of physical phenomena associated with the presence and motion of matter that has a property of electric charge. In early days, electricity was considered as being not related to magnetism. Later on, many experimental results and the development of Maxwell’s equations indicated that both electricity and magnetism are from a single phenomenon: electromagnetism. Various common phenomena are related to electricity, including lightning, static electricity, electric heating, electric discharges, and many others.
-                </p>
-                <p>
-                The presence of an electric charge, which can be either positive or negative, produces an electric field. The movement of electric charges is an electric current and produces a magnetic field.
-                </p>
-                <div className="gallery">
-                    {/* Add gallery images for the electricity service */}
-                    <img src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg" width="200px" height="200px" alt="" />&nbsp;
-                    <img src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg" width="200px" height="200px" alt="" />&nbsp;
-                    <img src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg" width="200px" height="200px" alt="" />&nbsp;
-                    {/* Add more images as needed */}
-                </div>
-                <h2>Work Types and Prices</h2>
-                <table>
-                <thead>
-                    <tr>
-                    <th>Work Type</th>
-                    <th>Price per Hour</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>Electrical Panel Upgrade</td>
-                    <td>$85</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Installation</td>
-                    <td>$40</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Bath Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Switch Installation</td>
-                    <td>$25</td>
-                    </tr>
-                </tbody>
-                </table>  
-            </>
-            )}
+        {selectedService === 'Electricity' && (
+          <>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <button onClick={() => handleServiceClick('Heating / AC')}>{t('servicesPage.nextHeatingAC')}</button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Drywall')}>
+                {t('servicesPage.backDrywall')}
+            </button>
+            </div>
+            
+            <h2>{t('servicesPage.electricalServices')}</h2>
+            <p>{t('servicesPage.electricityDescription1')}</p>
+            <p>{t('servicesPage.electricityDescription2')}</p>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('servicesPage.electricalPanelUpgrade')}</td>
+                  <td>$85</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.ceilingFanInstallation')}</td>
+                  <td>$40</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.ceilingFanRepair')}</td>
+                  <td>$30</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.bathFanRepair')}</td>
+                  <td>$30</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.switchInstallation')}</td>
+                  <td>$25</td>
+                </tr>
+              </tbody>
+            </table>
+          </>
+        )}
+
         {selectedService === 'Heating / AC' && (
-            <>
-              <button onClick={() => handleServiceClick('Painting')}>Next: Painting</button>
-                <h2>Central Heating and Air Conditioning</h2>
-                    <p>
-                    Central heating and air conditioning systems provide both heating and cooling functions for residential and commercial buildings. The heat generation for central heating occurs in one place, such as a furnace room or mechanical room, and the heat is distributed throughout the building using forced-air through ductwork or water/steam through pipes. In central air conditioning, the cooling process is achieved by circulating refrigerant through a compressor and evaporator coil to remove heat from indoor air.
-                    </p>
-                    <p>
-                    In many temperate climate zones, central heating and air conditioning systems are commonly installed to maintain comfortable indoor temperatures throughout the year. These systems have evolved from coal-fired steam or hot water systems to more efficient fuel oil or gas combustion, reducing the need for coal storage and ash removal. Both heating and cooling components require regular maintenance and occasional repairs to ensure optimal performance.
-                    </p>
-                    <h2>Work Types and Prices</h2>
-                <table>
-                <thead>
-                    <tr>
-                        <th>Work Type</th>
-                        <th>Price per Hour</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Heating System Installation</td>
-                        <td>$100</td>
-                    </tr>
-                    <tr>
-                        <td>Heating System Repair</td>
-                        <td>$85</td>
-                    </tr>
-                    <tr>
-                        <td>Heating System Maintenance</td>
-                        <td>$65</td>
-                    </tr>
-                    <tr>
-                        <td>Thermostat Installation</td>
-                        <td>$50</td>
-                    </tr>
-                    
-                </tbody>
-                <tbody>
-                    <tr>
-                        <td>Air Conditioning System Installation</td>
-                        <td>$120</td>
-                    </tr>
-                    <tr>
-                        <td>Air Conditioning System Repair</td>
-                        <td>$95</td>
-                    </tr>
-                    <tr>
-                        <td>Air Conditioning System Maintenance</td>
-                        <td>$75</td>
-                    </tr>
-                    <tr>
-                        <td>Thermostat Installation</td>
-                        <td>$50</td>
-                    </tr>
-                </tbody>
-                </table>
-              
-            </>
+          <>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <button onClick={() => handleServiceClick('Painting')}>{t('servicesPage.nextPainting')}</button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Electricity')}>
+                {t('servicesPage.backElectricity')}
+            </button>
+            </div>
+           
+            <h2>{t('servicesPage.centralHeatingAC')}</h2>
+            <p>{t('servicesPage.centralHeatingACDescription1')}</p>
+            <p>{t('servicesPage.centralHeatingACDescription2')}</p>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('servicesPage.heatingSystemInstallation')}</td>
+                  <td>$100</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.heatingSystemRepair')}</td>
+                  <td>$85</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.heatingSystemMaintenance')}</td>
+                  <td>$65</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.thermostatInstallation')}</td>
+                  <td>$50</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.airConditioningSystemInstallation')}</td>
+                  <td>$120</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.airConditioningSystemRepair')}</td>
+                  <td>$95</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.airConditioningSystemMaintenance')}</td>
+                  <td>$75</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.thermostatInstallation')}</td>
+                  <td>$50</td>
+                </tr>
+              </tbody>
+            </table>
+          </>
         )}
 
         {selectedService === 'Painting' && (
-        <>
-            <h2>Painting Services</h2>
-                <p>
-                    Painting is the practice of applying paint, pigment, color, or other medium to a solid surface (support base). The medium is commonly applied to the base with a brush, but other implements, such as knives, sponges, and airbrushes, can be used. The final work is also called a painting.
-                </p>
-                <p>
-                    Painting is an important form in the visual arts, bringing in elements such as drawing, gesture (as in gestural painting), composition, narration (as in narrative art), or abstraction (as in abstract art). Paintings can be naturalistic and representational (as in a still life or landscape painting), photographic, abstract, narrative, symbolistic (as in Symbolist art), emotive (as in Expressionism), or political in nature (as in Artivism).
-                </p>
-            <h2>Work Types and Prices</h2>
+          <>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <button onClick={() => handleServiceClick('Plumbing')}>{t('servicesPage.nextPlumbing')}</button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Heating / AC')}>
+                {t('servicesPage.backHeatingAC')}
+            </button>
+            </div>
+           
+            <h2>{t('servicesPage.paintingServices')}</h2>
+            <p>{t('servicesPage.paintingDescription1')}</p>
+            <p>{t('servicesPage.paintingDescription2')}</p>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
-            <thead>
+              <thead>
                 <tr>
-                    <th>Work Type</th>
-                    <th>Price per Hour</th>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
                 <tr>
-                    <td>Painting of Walls</td>
-                    <td>$50</td>
-                </tr>
-                <tr>
-                    <td>Painting of Ceilings</td>
-                    <td>$60</td>
+                  <td>{t('servicesPage.paintingWalls')}</td>
+                  <td>$50</td>
                 </tr>
                 <tr>
-                    <td>Exterior Painting</td>
-                    <td>$80</td>
+                  <td>{t('servicesPage.paintingCeilings')}</td>
+                  <td>$60</td>
                 </tr>
                 <tr>
-                    <td>Painting of Doors</td>
-                    <td>$40</td>
+                  <td>{t('servicesPage.exteriorPainting')}</td>
+                  <td>$80</td>
                 </tr>
                 <tr>
-                    <td>Painting of Cabinets</td>
-                    <td>$70</td>
+                  <td>{t('servicesPage.paintingDoors')}</td>
+                  <td>$40</td>
                 </tr>
-            </tbody>
+                <tr>
+                  <td>{t('servicesPage.paintingCabinets')}</td>
+                  <td>$70</td>
+                </tr>
+              </tbody>
             </table>
-            <button onClick={() => handleServiceClick('Plumbing')}>Next: Plumbing</button>
-        </>
+           
+          </>
         )}
 
         {selectedService === 'Plumbing' && (
-        <>
-            <h2>Plumbing Services</h2>
-                <p>
-                    Plumbing is any system that conveys fluids for a wide range of applications. It uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications. The word derives from the Latin for lead, plumbum, as the first effective pipes used in the Roman era were lead pipes.
-                </p>
-                <p>
-                    In the developed world, plumbing infrastructure is critical to public health and sanitation. While boilermakers and pipefitters work with piping as part of their trade, plumbing encompasses a broader scope of systems and applications.
-                </p>
-            <h2>Work Types and Prices</h2>
+          <>
+           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <button onClick={() => handleServiceClick('Renovation')}>{t('servicesPage.nextRenovation')}</button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Painting')}>
+                {t('servicesPage.backPainting')}
+            </button>
+            </div>
+           
+            <h2>{t('servicesPage.plumbingServices')}</h2>
+            <p>{t('servicesPage.plumbingDescription1')}</p>
+            <p>{t('servicesPage.plumbingDescription2')}</p>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
-            <thead>
+              <thead>
                 <tr>
-                    <th>Work Type</th>
-                    <th>Price per Hour</th>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
                 </tr>
-            </thead>
-            <tbody>
+              </thead>
+              <tbody>
                 <tr>
-                <td>Leak Repairs</td>
-                <td>$70</td>
-                </tr>
-                <tr>
-                <td>Pipe Installation</td>
-                <td>$80</td>
+                  <td>{t('servicesPage.leakRepairs')}</td>
+                  <td>$70</td>
                 </tr>
                 <tr>
-                <td>Drain Cleaning</td>
-                <td>$60</td>
+                  <td>{t('servicesPage.pipeInstallation')}</td>
+                  <td>$80</td>
                 </tr>
                 <tr>
-                <td>Toilet Repair</td>
-                <td>$50</td>
+                  <td>{t('servicesPage.drainCleaning')}</td>
+                  <td>$60</td>
                 </tr>
                 <tr>
-                <td>Fixture Installation</td>
-                <td>$40</td>
+                  <td>{t('servicesPage.toiletRepair')}</td>
+                  <td>$50</td>
                 </tr>
-            </tbody>
+                <tr>
+                  <td>{t('servicesPage.fixtureInstallation')}</td>
+                  <td>$40</td>
+                </tr>
+              </tbody>
             </table>
-            <button onClick={() => handleServiceClick('Renovation')}>Next: Renovation</button>
-        </>
+           
+          </>
         )}
 
         {selectedService === 'Renovation' && (
-            <>
-                <h2>Home Services</h2> 
-                <p>
-                Renovation (also called remodeling) is the process of improving a broken, damaged, or outdated structure. Renovations are typically either commercial or residential. Additionally, renovation can refer to making something new, or bringing something back to life and can apply in social contexts. For example, a community can be renovated if it is strengthened and revived.
-                </p>
-                <p>
-                Technology has had a meaningful impact on the renovation process, increasing the significance and strength of the planning stage. The availability of free online design tools has improved visualization of the changes, at a fraction of the cost of hiring a professional interior designer. The decision regarding changes is also influenced by the purpose of renovation. In case of a fix and flip objective, an ROI (return on investment) can result from changes to fix a structural issue or design flow yield or to use light and color to make rooms appear more spacious.
-                </p>
-                <h2>Work Types and Prices</h2>
-                <table>
-                <thead>
-                    <tr>
-                    <th>Work Type</th>
-                    <th>Price per Hour</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>Electrical Panel Upgrade</td>
-                    <td>$85</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Installation</td>
-                    <td>$40</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Bath Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Switch Installation</td>
-                    <td>$25</td>
-                    </tr>
-                </tbody>
-                </table>
-                <button onClick={() => handleServiceClick('Pressure Washing')}>Next: Pressure Washing</button>
-            </>
+          <>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <button onClick={() => handleServiceClick('Pressure Washing')}>{t('servicesPage.nextPressureWashing')}</button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Plumbing')}>
+                {t('servicesPage.backPlumbing')}
+            </button>
+            </div>
+          
+            <h2>{t('servicesPage.homeRenovationServices')}</h2>
+            <p>{t('servicesPage.renovationDescription1')}</p>
+            <p>{t('servicesPage.renovationDescription2')}</p>
+            <ul>
+              <li>{t('servicesPage.interiorExteriorPainting')}</li>
+              <li>{t('servicesPage.flooringInstallationRepair')}</li>
+              <li>{t('servicesPage.kitchenBathroomRemodeling')}</li>
+              <li>{t('servicesPage.windowDoorReplacement')}</li>
+              <li>{t('servicesPage.roofRepairInstallation')}</li>
+              <li>{t('servicesPage.cabinetInstallation')}</li>
+              <li>{t('servicesPage.deckPatioConstruction')}</li>
+              <li>{t('servicesPage.lightingFixtureUpgrades')}</li>
+              <li>{t('servicesPage.plumbingElectricalUpgrades')}</li>
+            </ul>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('servicesPage.interiorPainting')}</td>
+                  <td>$50</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.flooringInstallation')}</td>
+                  <td>$70</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.kitchenRemodeling')}</td>
+                  <td>$100</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.bathroomRemodeling')}</td>
+                  <td>$90</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.windowReplacement')}</td>
+                  <td>$80</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.cabinetInstallation')}</td>
+                  <td>$70</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.deckConstruction')}</td>
+                  <td>$80</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.lightingFixtureUpgrades')}</td>
+                  <td>$50</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.plumbingElectricalUpgrades')}</td>
+                  <td>$60</td>
+                </tr>
+              </tbody>
+            </table>
+            
+          </>
         )}
+
         {selectedService === 'Pressure Washing' && (
-            <>
-                <h2>Home Services</h2>
-                <p>
-                Pressure washing, also known as power washing, is the process of using high-pressure water spray to remove dirt, grime, mold, mildew, and other contaminants from various surfaces. It is an effective method for cleaning and rejuvenating different surfaces, including driveways, sidewalks, decks, siding, fences, and more.
-                </p>
-                <p>
-                Pressure washing utilizes advanced techniques and equipment to achieve thorough cleaning results. The high-pressure water spray helps to remove tough stains, dirt buildup, and even peeling paint, restoring the appearance and enhancing the overall aesthetics of surfaces.
-                </p>
-                <p>
-                Whether you want to revitalize your outdoor spaces, prepare surfaces for painting or refinishing, or simply maintain a clean and fresh look, pressure washing can provide excellent results.
-                </p>
-                <h2>Work Types and Prices</h2>
-                <table>
-                <thead>
-                    <tr>
-                    <th>Work Type</th>
-                    <th>Price per Hour</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>Driveway Pressure Washing</td>
-                    <td>$50</td>
-                    </tr>
-                    <tr>
-                    <td>Sidewalk Pressure Washing</td>
-                    <td>$40</td>
-                    </tr>
-                    <tr>
-                    <td>Deck Pressure Washing</td>
-                    <td>$60</td>
-                    </tr>
-                    <tr>
-                    <td>Siding Pressure Washing</td>
-                    <td>$70</td>
-                    </tr>
-                    <tr>
-                    <td>Fence Pressure Washing</td>
-                    <td>$45</td>
-                    </tr>
-                </tbody>
-                </table>
-                <button onClick={() => handleServiceClick('Sanitary')}>Next: Roofing</button>
-            </>
-            )}
+          <>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <button onClick={() => handleServiceClick('Sanitary')}>
+                {t('servicesPage.nextSanitary')}
+            </button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Renovation')}>
+                {t('servicesPage.backRenovation')}
+            </button>
+            </div>
+            <h2>{t('servicesPage.homeServices')}</h2>
+            <p>{t('servicesPage.pressureWashingDescription1')}</p>
+            <p>{t('servicesPage.pressureWashingDescription2')}</p>
+            <p>{t('servicesPage.pressureWashingDescription3')}</p>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('servicesPage.drivewayPressureWashing')}</td>
+                  <td>$50</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.sidewalkPressureWashing')}</td>
+                  <td>$40</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.deckPressureWashing')}</td>
+                  <td>$60</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.sidingPressureWashing')}</td>
+                  <td>$70</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.fencePressureWashing')}</td>
+                  <td>$45</td>
+                </tr>
+              </tbody>
+            </table>
+           
+          </>
+        )}
 
         {selectedService === 'Sanitary' && (
-            <>
-                <h2>Home Services</h2>
-                <p>
-                Plumbing is any system that conveys fluids for a wide range of applications. It uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications. The word derives from the Latin for lead, plumbum, as the first effective pipes used in the Roman era were lead pipes.
-                </p>
-                <p>
-                In the developed world, plumbing infrastructure is critical to public health and sanitation. While boilermakers and pipefitters work with piping as part of their trade, plumbing encompasses a broader scope of systems and applications.
-                </p>
-                <h2>Work Types and Prices</h2>
-                <table>
-                <thead>
-                    <tr>
-                    <th>Work Type</th>
-                    <th>Price per Hour</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>Electrical Panel Upgrade</td>
-                    <td>$85</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Installation</td>
-                    <td>$40</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Bath Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Switch Installation</td>
-                    <td>$25</td>
-                    </tr>
-                </tbody>
-                </table>
-                <button onClick={() => handleServiceClick('Drywall')}>Next: Renovation</button>
-            </>
+          <>
+           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+           <button onClick={() => handleServiceClick('Drywall')}>
+                {t('servicesPage.nextDrywall')}
+            </button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Pressure Washing')}>
+                {t('servicesPage.backPressureWashing')}
+            </button>
+            </div>
+            <h2>{t('servicesPage.sanitaryServices')}</h2>
+            <p>{t('servicesPage.sanitaryDescription1')}</p>
+            <p>{t('servicesPage.sanitaryDescription2')}</p>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('servicesPage.sewerLineCleaning')}</td>
+                  <td>$70</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.pipeInstallation')}</td>
+                  <td>$80</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.drainCleaning')}</td>
+                  <td>$60</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.toiletRepair')}</td>
+                  <td>$50</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.leakRepairs')}</td>
+                  <td>$40</td>
+                </tr>
+              </tbody>
+            </table>
+           
+          </>
         )}
+
         {selectedService === 'Drywall' && (
-            <>
-                <h2>Home Services</h2>
-                <p>
-                Plumbing is any system that conveys fluids for a wide range of applications. It uses pipes, valves, plumbing fixtures, tanks, and other apparatuses to convey fluids. Heating and cooling (HVAC), waste removal, and potable water delivery are among the most common uses for plumbing, but it is not limited to these applications. The word derives from the Latin for lead, plumbum, as the first effective pipes used in the Roman era were lead pipes.
-                </p>
-                <p>
-                In the developed world, plumbing infrastructure is critical to public health and sanitation. While boilermakers and pipefitters work with piping as part of their trade, plumbing encompasses a broader scope of systems and applications.
-                </p>
-                <h2>Work Types and Prices</h2>
-                <table>
-                <thead>
-                    <tr>
-                    <th>Work Type</th>
-                    <th>Price per Hour</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>Electrical Panel Upgrade</td>
-                    <td>$85</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Installation</td>
-                    <td>$40</td>
-                    </tr>
-                    <tr>
-                    <td>Ceiling Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Bath Fan Repair</td>
-                    <td>$30</td>
-                    </tr>
-                    <tr>
-                    <td>Switch Installation</td>
-                    <td>$25</td>
-                    </tr>
-                </tbody>
-                </table>
-                <button onClick={() => handleServiceClick('Electricity')}>Back: Electricity</button>
-            </>
+          <>
+           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Electricity')}>
+                {t('servicesPage.nextElectricity')}
+            </button>
+            <span style={{ margin: '0 10px' }}>|</span>
+            <button className='BackBtnSan' onClick={() => handleServiceClick('Sanitary')}>
+                {t('servicesPage.backSanitary')}
+            </button>
+            </div>
+            <h2>{t('servicesPage.drywallServices')}</h2>
+            <p>{t('servicesPage.drywallDescription1')}</p>
+            <p>{t('servicesPage.drywallDescription2')}</p>
+            <h2>{t('servicesPage.workTypesPrices')}</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>{t('servicesPage.workType')}</th>
+                  <th>{t('servicesPage.pricePerHour')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{t('servicesPage.drywallInstallation')}</td>
+                  <td>$70</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.drywallRepair')}</td>
+                  <td>$60</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.drywallFinishing')}</td>
+                  <td>$80</td>
+                </tr>
+                <tr>
+                  <td>{t('servicesPage.drywallTexturing')}</td>
+                  <td>$50</td>
+                </tr>
+              </tbody>
+            </table>
+          </>
         )}
       </div>
     </div>
