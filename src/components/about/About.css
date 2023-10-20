@@ -43,7 +43,8 @@
 }
 
 .review-card {
-  width: calc(33.33% - 2rem);
+  width: calc(29%);
+  height: 100%;
   margin: 1rem;
   background-color: #ffffff;
   border-radius: 8px;
@@ -97,47 +98,498 @@
   font-size: 30px;
 }
 
+.facebook-post {
+  height: 100%;
+}
+
+iframe.img1{
+  width: 100%;
+  min-height: auto;
+}
+
+iframe.img2{
+  width: 100%;
+  min-height: auto;
+}
+
+iframe.img3{
+  width: 100%;
+  min-height: auto;
+}
+
+iframe.img4{
+  width: 100%;
+  min-height: auto;
+}
+
+iframe.img5{
+  width: 100%;
+  min-height: auto;
+}
 /* Media Queries */
-@media only screen and (max-width: 480px) {
+@media (min-width: 290px) and (max-width: 540px) {
   .about-content {
-    max-width: 90%;
+  max-width: 90%;
+  padding: 10px;
+  }
+  
+  .about-title {
+  font-size: 18px;
+  margin-bottom: 8px;
+  }
+  
+  .about-section {
+  margin-bottom: 8px;
+  }
+  
+  .about-description {
+  font-size: 12px;
+  margin-bottom: 8px;
+  }
+  
+  .highlight {
+  background-image: linear-gradient(to right, #C60C30, #002868);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  }
+  
+  .reviews {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  }
+  
+  .review-card {
+  margin: 4px;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  }
+  
+  .review-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .review-card-content {
+  margin-bottom: 4px;
+  }
+  
+  .review-card-title {
+  font-size: 14px;
+  font-weight: bold;
+  }
+  
+  .review-card-description {
+  font-size: 10px;
+  color: #888;
+  }
+  
+  .review-card-author {
+  font-size: 8px;
+  color: #ffffff;
+  }
+  
+  .review-card-rating {
+  font-size: 12px;
+  color: #f4d03f;
+  margin-bottom: 4px;
+  }
+  
+  .about-link {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #2ecc71;
+  color: #fff;
+  font-size: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  }
+  
+  iframe.img1{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img2{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img3{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img4{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img5{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  }
+
+@media (max-width: 576px) {
+  .about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .about-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+  }
+  
+  .about-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .about-section {
+    margin-bottom: 1rem;
+  }
+  
+  .about-description {
+    margin-bottom: 0.5rem;
+  }
+  
+   .reviews-section {
+    margin-bottom: 1rem;
+  }
+
+  .reviews {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    color: black;
+  }
+
+  .review-card {
+    margin: 4px;
+    width: calc((70% / 1));
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .review-card-content {
+    margin-bottom: 0.5rem;
+  }
+
+  .review-card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .review-card-description {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .review-card-author {
+    font-size: 10px;
+    color: #ffffff;
+  }
+
+  .review-card-rating {
+    font-size: 14px;
+    color: #f4d03f;
+    margin-bottom: 0.3rem;
+  }
+
+  iframe.img1{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img2{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img3{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img4{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img5{
+    width: 100%;
+    min-height: auto;
+  }
+  .opening-hours-section {
+    margin-bottom: 1rem;
+  }
+  
+  .opening-hours-title {
+    margin-bottom: 0.5rem;
+  }
+  
+  .opening-hours-table {
+    width: 100%;
+  }
+}
+
+
+
+@media (max-width: 992px) {
+  .about-page {
+    /* CSS styles for about-page at max-width: 992px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 10px;
   }
-
-  .about-title {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .about-description {
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
-
-  .about-link {
-    font-size: 8px;
-    padding: 4px 8px;
-  }
-}
-
-@media only screen and (min-width: 481px) and (max-width: 768px) {
   .about-content {
-    max-width: 90%;
-    padding: 12px;
+    /* CSS styles for about-content at max-width: 992px */
+    width: 90%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .about-title {
+    /* CSS styles for about-title at max-width: 992px */
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-section {
+    /* CSS styles for about-section at max-width: 992px */
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-description {
+    /* CSS styles for about-description at max-width: 992px */
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .reviews-section {
+    margin-bottom: 1rem;
+  }
+
+  .reviews {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    color: black;
+  }
+
+  .review-card {
+    margin: 4px;
+    width: calc((70% / 1));
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .review-card-content {
+    margin-bottom: 0.5rem;
+  }
+
+  .review-card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .review-card-description {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .review-card-author {
+    font-size: 10px;
+    color: #ffffff;
+  }
+
+  .review-card-rating {
+    font-size: 14px;
+    color: #f4d03f;
+    margin-bottom: 0.3rem;
+  }
+
+  iframe.img1{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img2{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img3{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img4{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img5{
+    width: 100%;
+    min-height: auto;
+  }
+  
+}
+@media (min-width: 800px) and (max-width: 1250px) {
+  .about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
   }
 
   .about-title {
-    font-size: 16px;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-section {
+    margin-bottom: 1rem;
   }
 
   .about-description {
-    font-size: 12px;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 
-  .about-link {
+  .reviews-section {
+    margin-bottom: 1rem;
+  }
+
+  .reviews {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    color: black;
+  }
+
+  .review-card {
+    margin: 4px;
+    width: calc((50% / 1));
+    height: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .review-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .review-card-content {
+    margin-bottom: 0.5rem;
+  }
+
+  .review-card-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .review-card-description {
+    font-size: 12px;
+    color: #888;
+  }
+
+  .review-card-author {
     font-size: 10px;
-    padding: 4px 8px;
+    color: #ffffff;
+  }
+
+  .review-card-rating {
+    font-size: 14px;
+    color: #f4d03f;
+    margin-bottom: 0.3rem;
+  }
+
+  iframe.img1{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img2{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img3{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img4{
+    width: 100%;
+    min-height: auto;
+  }
+  
+  iframe.img5{
+    width: 100%;
+    min-height: auto;
+  }
+
+  .opening-hours-section {
+    margin-bottom: 1rem;
+  }
+
+  .opening-hours-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .opening-hours-table {
+    width: 100%;
   }
 }
+
+
+

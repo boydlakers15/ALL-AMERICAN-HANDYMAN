@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FiGlobe } from 'react-icons/fi'; // Import the globe icon from react-icons
+import { FiGlobe } from 'react-icons/fi';
 import './LanguageSwitcher.css';
 
 const languageOptions = [
@@ -16,7 +16,7 @@ const languageOptions = [
   },
   {
     id: 'es',
-    name: 'Español',
+    name: 'español',
     flagimg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/2560px-Flag_of_Spain.svg.png',
   },
   {
@@ -52,23 +52,34 @@ const languageOptions = [
   {
     id: 'ar',
     name: 'العربية',
-    flagimg: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_the_Arab_League.svg/200px-Flag_of_the_Arab_League.svg.png',
+   
+  },
+  {
+    id: 'mx',
+    name: 'México',
+   
   },
 ];
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
+  const [hoveredLanguage, setHoveredLanguage] = useState(null);
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const currentLanguage = i18n.language;
 
   const handleLanguageChange = (event) => {
     const selectedLanguage = event.target.value;
     i18n.changeLanguage(selectedLanguage);
-    setDropdownOpen(false); // Close the dropdown after language change
+    setSelectedLanguage(selectedLanguage);
+    setDropdownOpen(false);
   };
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
+  };
+
+  const handleLanguageHover = (languageId) => {
+    setHoveredLanguage(languageId);
   };
 
   const getLanguageName = (languageId) => {
@@ -76,28 +87,36 @@ const LanguageSwitcher = () => {
     return language ? language.name : '';
   };
 
+  const getButtonClass = (languageId) => {
+    if (selectedLanguage === languageId) {
+      return 'language-option-button selected';
+    } else if (hoveredLanguage === languageId) {
+      return 'language-option-button hovered';
+    } else {
+      return 'language-option-button';
+    }
+  };
+
   return (
     <div className="language-switcher">
       <button className="language-dropdown-button" onClick={toggleDropdown}>
-        {getLanguageName(currentLanguage)}&nbsp;<FiGlobe className="globe-icon" />
+        {getLanguageName(selectedLanguage)}&nbsp;<FiGlobe className="globe-icon" />
       </button>
       {dropdownOpen && (
         <div className="language-dropdown-menu">
+          
           {languageOptions.map((lang) => (
             <button
               key={lang.id}
-              className="language-option-button"
+              className={getButtonClass(lang.id)}
               onClick={handleLanguageChange}
+              onMouseEnter={() => handleLanguageHover(lang.id)}
+              onMouseLeave={() => handleLanguageHover(null)}
               value={lang.id}
+              data-flag={lang.id}
+              
             >
-              <img
-                src={lang.flagimg}
-                className="language-flag"
-                alt={lang.name}
-                height="40px"
-                width="40px"
-              />
-              {lang.name}
+            <p>{lang.name}</p> 
             </button>
           ))}
         </div>

@@ -22,7 +22,7 @@ const ServicesPage = () => {
 
   return (
     <div>
-      <h1 className="service-title page-title__overlay">{t(selectedService)}</h1>
+      <h1 style={{fontSize: '44px'}}className="service-title page-title__overlay">{t(selectedService)}</h1>
       <div className="sidebar">
         <ul>
           <li onClick={() => handleServiceClick('Electricity')}>{t('servicesPage.electricity')}</li>
@@ -38,32 +38,35 @@ const ServicesPage = () => {
       <div className="service-info">
         {selectedService === 'Electricity' && (
           <>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <button onClick={() => handleServiceClick('Heating / AC')}>{t('servicesPage.nextHeatingAC')}</button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Drywall')}>
-                {t('servicesPage.backDrywall')}
-            </button>
-            </div>
+         
             
             <h2>{t('servicesPage.electricalServices')}</h2>
             <p>{t('servicesPage.electricityDescription1')}</p>
             <p>{t('servicesPage.electricityDescription2')}</p>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
             <div className="gallery">
               <img
                 src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
                 width="200px"
                 height="200px"
                 alt=""
-              />
+                
+              />&nbsp;
               <img
                 src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
                 width="200px"
                 height="200px"
                 alt=""
-              />
+                
+              />&nbsp;
               <img
                 src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
                 width="200px"
                 height="200px"
                 alt=""
@@ -100,22 +103,50 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={() => handleServiceClick('Heating / AC')}>{t('servicesPage.nextHeatingAC')}</button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Drywall')}>
+                    {t('servicesPage.backDrywall')}
+                </button>
+            </div>
           </>
         )}
 
         {selectedService === 'Heating / AC' && (
           <>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <button onClick={() => handleServiceClick('Painting')}>{t('servicesPage.nextPainting')}</button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Electricity')}>
-                {t('servicesPage.backElectricity')}
-            </button>
-            </div>
-           
             <h2>{t('servicesPage.centralHeatingAC')}</h2>
             <p>{t('servicesPage.centralHeatingACDescription1')}</p>
             <p>{t('servicesPage.centralHeatingACDescription2')}</p>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
             <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
               <thead>
@@ -159,22 +190,50 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={() => handleServiceClick('Painting')}>{t('servicesPage.nextPainting')}</button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Electricity')}>
+                    {t('servicesPage.backElectricity')}
+                </button>
+            </div>
           </>
         )}
 
         {selectedService === 'Painting' && (
           <>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <button onClick={() => handleServiceClick('Plumbing')}>{t('servicesPage.nextPlumbing')}</button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Heating / AC')}>
-                {t('servicesPage.backHeatingAC')}
-            </button>
-            </div>
-           
             <h2>{t('servicesPage.paintingServices')}</h2>
             <p>{t('servicesPage.paintingDescription1')}</p>
             <p>{t('servicesPage.paintingDescription2')}</p>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
             <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
               <thead>
@@ -206,23 +265,50 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
-           
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={() => handleServiceClick('Plumbing')}>{t('servicesPage.nextPlumbing')}</button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Heating / AC')}>
+                    {t('servicesPage.backHeatingAC')}
+                </button>
+            </div>
           </>
         )}
 
         {selectedService === 'Plumbing' && (
           <>
-           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-           <button onClick={() => handleServiceClick('Renovation')}>{t('servicesPage.nextRenovation')}</button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Painting')}>
-                {t('servicesPage.backPainting')}
-            </button>
-            </div>
-           
             <h2>{t('servicesPage.plumbingServices')}</h2>
             <p>{t('servicesPage.plumbingDescription1')}</p>
             <p>{t('servicesPage.plumbingDescription2')}</p>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
             <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
               <thead>
@@ -254,20 +340,18 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
-           
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={() => handleServiceClick('Renovation')}>{t('servicesPage.nextRenovation')}</button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Painting')}>
+                    {t('servicesPage.backPainting')}
+                </button>
+            </div>
           </>
         )}
 
         {selectedService === 'Renovation' && (
           <>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          <button onClick={() => handleServiceClick('Pressure Washing')}>{t('servicesPage.nextPressureWashing')}</button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Plumbing')}>
-                {t('servicesPage.backPlumbing')}
-            </button>
-            </div>
-          
             <h2>{t('servicesPage.homeRenovationServices')}</h2>
             <p>{t('servicesPage.renovationDescription1')}</p>
             <p>{t('servicesPage.renovationDescription2')}</p>
@@ -282,6 +366,35 @@ const ServicesPage = () => {
               <li>{t('servicesPage.lightingFixtureUpgrades')}</li>
               <li>{t('servicesPage.plumbingElectricalUpgrades')}</li>
             </ul>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
             <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
               <thead>
@@ -329,25 +442,51 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
-            
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={() => handleServiceClick('Pressure Washing')}>{t('servicesPage.nextPressureWashing')}</button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Plumbing')}>
+                    {t('servicesPage.backPlumbing')}
+                </button>
+            </div>
           </>
         )}
 
         {selectedService === 'Pressure Washing' && (
           <>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-           <button onClick={() => handleServiceClick('Sanitary')}>
-                {t('servicesPage.nextSanitary')}
-            </button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Renovation')}>
-                {t('servicesPage.backRenovation')}
-            </button>
-            </div>
             <h2>{t('servicesPage.homeServices')}</h2>
             <p>{t('servicesPage.pressureWashingDescription1')}</p>
             <p>{t('servicesPage.pressureWashingDescription2')}</p>
             <p>{t('servicesPage.pressureWashingDescription3')}</p>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
             <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
               <thead>
@@ -379,24 +518,52 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
-           
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={() => handleServiceClick('Sanitary')}>
+                    {t('servicesPage.nextSanitary')}
+                </button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Renovation')}>
+                    {t('servicesPage.backRenovation')}
+                </button>
+            </div>
           </>
         )}
 
         {selectedService === 'Sanitary' && (
           <>
-           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-           <button onClick={() => handleServiceClick('Drywall')}>
-                {t('servicesPage.nextDrywall')}
-            </button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Pressure Washing')}>
-                {t('servicesPage.backPressureWashing')}
-            </button>
-            </div>
             <h2>{t('servicesPage.sanitaryServices')}</h2>
             <p>{t('servicesPage.sanitaryDescription1')}</p>
             <p>{t('servicesPage.sanitaryDescription2')}</p>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
             <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
               <thead>
@@ -428,24 +595,52 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
-           
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <button onClick={() => handleServiceClick('Drywall')}>
+                    {t('servicesPage.nextDrywall')}
+                </button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Pressure Washing')}>
+                    {t('servicesPage.backPressureWashing')}
+                </button>
+            </div>
           </>
         )}
 
         {selectedService === 'Drywall' && (
           <>
-           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Electricity')}>
-                {t('servicesPage.nextElectricity')}
-            </button>
-            <span style={{ margin: '0 10px' }}>|</span>
-            <button className='BackBtnSan' onClick={() => handleServiceClick('Sanitary')}>
-                {t('servicesPage.backSanitary')}
-            </button>
-            </div>
             <h2>{t('servicesPage.drywallServices')}</h2>
             <p>{t('servicesPage.drywallDescription1')}</p>
             <p>{t('servicesPage.drywallDescription2')}</p>
+            <h2>{t('servicesPage.galleryTitle')}</h2>
+            <div className="gallery">
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_05-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_04-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+                
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_03-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />&nbsp;
+              <img
+                src="https://preview.lsvr.sk/bluecollar/wp-content/uploads/sites/4/2018/10/service_gallery_01-600x450.jpg"
+                width="200px"
+                height="200px"
+                alt=""
+              />
+            </div>
             <h2>{t('servicesPage.workTypesPrices')}</h2>
             <table>
               <thead>
@@ -473,6 +668,15 @@ const ServicesPage = () => {
                 </tr>
               </tbody>
             </table>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Electricity')}>
+                    {t('servicesPage.nextElectricity')}
+                </button>
+                <span style={{ margin: '0 10px' }}>|</span>
+                <button className='BackBtnSan' onClick={() => handleServiceClick('Sanitary')}>
+                    {t('servicesPage.backSanitary')}
+                </button>
+            </div>
           </>
         )}
       </div>

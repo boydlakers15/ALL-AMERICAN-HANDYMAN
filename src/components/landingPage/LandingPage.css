@@ -72,7 +72,7 @@
 }
 
 .landing-page-footer-text {
-  font-size: 12px;
+  font-size: 14px;
   color: #ccc;
 }
 
@@ -185,7 +185,7 @@
 }
 
 .card4::before {
-  background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/354905819_1960122464354057_1636097582696393931_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=VHvhh3tZ4o8AX9W1V04&_nc_ht=scontent.ffra1-1.fna&oh=00_AfA3U7o-FnTmYLxquidKHdMKJTePNaRZ-8Xu2uV67lhRVw&oe=6497FBBF');
+  background-image: url("https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/310004491_634869851475089_6523544384207715078_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=sfCBVf-5Z_IAX9x1nqs&_nc_ht=scontent.ffra1-1.fna&oh=00_AfC2BEEl3RIVGmUtWcdkN5uTn_rjDRfPEZyn-bmF_iVBew&oe=64BE151F");
 }
 
 .card5::before {
@@ -201,7 +201,7 @@
 }
 
 .card8::before {
-  background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/352173861_1018590226235750_7897399873241068448_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=QArXlgqGOYsAX9VM41u&_nc_ht=scontent.ffra1-1.fna&oh=00_AfBYkr-oa1M-a1tdfD5Y33GNTnH2E4gODyHdDoPEmfGhZw&oe=649734E5');
+  background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/361099108_1978501505849486_5434438681317654537_n.jpg?stp=cp6_dst-jpg&_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=XPIj1ESduecAX87jwuS&_nc_ht=scontent.ffra1-1.fna&oh=00_AfBHWWYI2wqA_e90PYmGxgLHrAceWGtydDDtluWPzvfgtg&oe=64BE5F89');
 }
 
 .card1:hover::before,
@@ -260,7 +260,7 @@
 .card-icon {
   margin-bottom: 10px;
   font-size: 24px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .card-icon:hover {
@@ -533,7 +533,6 @@
   }
 }
 @media (min-width: 1250px) {
-  /* Styles for iPhone 6/7/8 and similar mobile screens */
   
   .landing-page {
     position: relative;
@@ -565,6 +564,7 @@
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     box-sizing: border-box;
+    
   }
   
   .landing-page-title {
@@ -575,7 +575,7 @@
   }
   
   .landing-page-slogan {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
     color: #000000;
     margin-bottom: 10px;
@@ -586,7 +586,7 @@
   }
   
   .landing-page-description {
-    font-size: 18px;
+    font-size: 25px;
     margin-bottom: 20px;
     color: #ffffff;
   }
@@ -631,15 +631,11 @@
     overflow: auto;
   }
   
-  
-  
   .card-title {
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
   }
-  
-  
   
   .card-section {
     display: grid;
@@ -717,37 +713,7 @@
     
   }
   
-  .card1::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t1.6435-9/73056622_1002453066764087_7351931181123764224_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=a_eBrcS6zkIAX8NuRGb&_nc_ht=scontent.ffra1-1.fna&oh=00_AfDEoIParNPpzIrzMTSyyMIaNbSJrwus3WpryrMNwHDMSA&oe=64B90CED');
-  }
-  
-  .card2::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t1.6435-9/72196568_1002452480097479_8065807406312980480_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=frpETBoh7u4AX-prLts&_nc_ht=scontent.ffra1-1.fna&oh=00_AfCjYB0lXyHNQu6-upzDamo_PDXQF5MpmXR8rrsbNMY7cQ&oe=64B8E3FD');
-  }
-  
-  .card3::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t1.6435-9/72763495_1002455700097157_1246132589966655488_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=xPnQ_o8oS-IAX8iBAvV&_nc_ht=scontent.ffra1-1.fna&oh=00_AfBmaj1OOROXmAUfjMTHD2CpVt9IAuC4tSuuJwmZa2jF9w&oe=64B8EF2D');
-  }
-  
-  .card4::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/354905819_1960122464354057_1636097582696393931_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=VHvhh3tZ4o8AX9W1V04&_nc_ht=scontent.ffra1-1.fna&oh=00_AfA3U7o-FnTmYLxquidKHdMKJTePNaRZ-8Xu2uV67lhRVw&oe=6497FBBF');
-  }
-  
-  .card5::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/334571224_934059804277323_4004816279441083846_n.jpg?stp=cp6_dst-jpg&_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=H2KLGwgCq70AX8YPmFJ&_nc_ht=scontent.ffra1-1.fna&oh=00_AfCA3160b801oxT5NLudjjaAi3MzNjSAcTpFScRFWoeHMw&oe=6495E925');
-  }
-  
-  .card6::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t1.6435-9/117351741_1258591687816889_9200136929919382081_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=GrqHKBjxDbEAX8qa6wR&_nc_ht=scontent.ffra1-1.fna&oh=00_AfA_1umDK2RgFKalCuLY73xhoukfdKvqIUKu82wJgKd8ZA&oe=64B92243');
-  }
-  
-  .card7::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/310094008_634869888141752_1996464977723077369_n.jpg?stp=cp6_dst-jpg&_nc_cat=107&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=DopVyDBMDlsAX-DLsEv&_nc_ht=scontent.ffra1-1.fna&oh=00_AfDFMpfWd4vSk10l0QdRxhmpg1-sfEDygfZUlkdpFl_R2A&oe=6496AB65');
-  }
-  
-  .card8::before {
-    background-image: url('https://scontent.ffra1-1.fna.fbcdn.net/v/t39.30808-6/352173861_1018590226235750_7897399873241068448_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=QArXlgqGOYsAX9VM41u&_nc_ht=scontent.ffra1-1.fna&oh=00_AfBYkr-oa1M-a1tdfD5Y33GNTnH2E4gODyHdDoPEmfGhZw&oe=649734E5');
-  }
+ 
   
   .card1:hover::before,
   .card2:hover::before,
@@ -758,7 +724,7 @@
   .card7:hover::before,
   .card8:hover::before {
     filter: brightness(30%); /* Reset the brightness on hover */
-    opacity: 0.2; /* Reset the opacity on hover */
+    opacity: 0.1; /* Reset the opacity on hover */
   }
   
   .card:hover {
@@ -773,9 +739,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff;
-    padding: 20px;
+    color: #000000;
+    padding: 10px;
     height: 100%; /* Add this line to ensure the content fills the entire card height */
+    font-size: 12px;
+    
   }
   
   .card-content:hover {
@@ -787,12 +755,12 @@
     justify-content: center;
     text-align: center;
     color: #000000;
-    padding: 20px;
+    padding: 10px;
     height: 100%; /* Add this line to ensure the content fills the entire card height */
   }
   
   .card-title {
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
     cursor: pointer;
@@ -812,7 +780,7 @@
   }
   
   .card-info {
-    font-size: 14px;
+    font-size: 16px;
   }
   
   .card-heading-text{

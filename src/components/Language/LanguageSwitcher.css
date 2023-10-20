@@ -2,7 +2,6 @@
   position: relative;
   display: inline-block;
   margin-left: 10px;
-  perspective: 800px; /* Add perspective for 3D effect */
 }
 
 .language-dropdown-button {
@@ -12,14 +11,13 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  transition: transform 0.3s;
-  transform-style: preserve-3d; /* Enable 3D transform */
+  color: black;
 }
 
 .language-dropdown-button:hover {
   background-image: linear-gradient(to right, #C60C30, #002868);
-  color: #fafafa;
-  transform: translateY(-2px) translateZ(10px); /* Apply translation and depth */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .globe-icon {
@@ -31,13 +29,15 @@
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #fff;
+  background-color: #8b8989;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   padding: 10px;
-  min-width: 150px;
+  min-width: 250px;
   position: relative;
+
 }
 
 .language-option-button {
@@ -45,20 +45,75 @@
   align-items: center;
   padding: 5px;
   font-size: 14px;
-  color: #333;
-  border: none;
+  color: #ffffff;
   background-color: transparent;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
+  position: relative; /* Add position relative */
 }
 
-.language-option-button:hover {
-  background-image: linear-gradient(to right, #C60C30, #002868);
-  color: white;
+.language-option-button:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.8;
+  display: none; /* Hide the background image by default */
 }
 
-.language-flag {
-  margin-right: 5px;
+.language-option-button.hovered::after,
+.language-option-button.selected::after {
+  display: block; /* Show the background image for hovered and selected options */
+}
+
+.language-option-button[data-flag="en"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg');
+  justify-content: center;
+}
+
+.language-option-button[data-flag="de"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Flag_of_Germany_%28state%29.svg/175px-Flag_of_Germany_%28state%29.svg.png');
+}
+
+.language-option-button[data-flag="es"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/2560px-Flag_of_Spain.svg.png');
+}
+
+.language-option-button[data-flag="fr"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg');
+}
+
+.language-option-button[data-flag="it"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg');
+}
+
+.language-option-button[data-flag="zh"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/1920px-Flag_of_the_People%27s_Republic_of_China.svg.png');
+}
+
+.language-option-button[data-flag="ru"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/2560px-Flag_of_Russia.svg.png');
+}
+
+.language-option-button[data-flag="ja"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/2560px-Flag_of_Japan.svg.png');
+}
+
+.language-option-button[data-flag="pt"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1920px-Flag_of_Portugal.svg.png');
+}
+
+.language-option-button[data-flag="ar"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_the_Arab_League.svg/200px-Flag_of_the_Arab_League.svg.png');
+}
+
+.language-option-button[data-flag="mx"]:hover::after {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/255px-Flag_of_Mexico.svg.png');
 }
 
 .text-overlay {

@@ -15,6 +15,7 @@ import itTranslation from './Translation/it.json';
 import ptTranslation from './Translation/pt.json';
 import arTranslation from './Translation/ar.json';
 import jaTranslation from './Translation/ja.json';
+import mxTranslation from './Translation/mx.json';
 
 i18n.init({
   resources: {
@@ -28,6 +29,7 @@ i18n.init({
     pt: { translation: ptTranslation },
     ar: { translation: arTranslation },
     ja: { translation: jaTranslation },
+    mx: { translation: mxTranslation },
 
   },
   lng: 'en', // Set the default language

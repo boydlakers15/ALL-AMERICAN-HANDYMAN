@@ -16,7 +16,7 @@ const LoginPage = () => {
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_PRODUCTION_API}/users/login`,
+        `http://localhost:5005/users/login`,
         {
           userName,
           password,
@@ -51,7 +51,7 @@ const LoginPage = () => {
   const updateUserStatus = async (userId) => {
     try {
       const response = await axios.put(
-        `${import.meta.env.VITE_PRODUCTION_API}/users/update/${userId}`,
+        `http://localhost:5005/users/update/${userId}`,
         { status: true },
         { withCredentials: true }
       );

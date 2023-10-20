@@ -11,6 +11,15 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [isAdmin, setIsAdmin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -32,35 +41,63 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="container">
-        <div className="navbar-brand">
+        <div className="navbar-brand navbar-links">
           <Link to="/">
-            <div className="logo-container">
+            <div className="logo-container ">
               <img src={companyLogo} alt="Company Logo" className="logo" />
-              <span className="company-name">All American Handyman</span>
             </div>
           </Link>
         </div>
-        <div className="navbar-links">
-          <Link to="/">{t('navbar.home')}</Link>
-          <Link to="/contact">{t('navbar.contact')}</Link>
-          <Link style={{color: 'white'}} className="footer-cookiepolicy2" to="/about">{t('navbar.about')}</Link>
-          {isLoggedIn ? (
-            <>
-              {isAdmin ? (
-                <>
-                  <Link to="/profile">{t('navbar.profile')}</Link>
-                  <Link to="/work">{t('navbar.work')}</Link>
-                  <Link to="/admin">{t('navbar.admin')}</Link>
-                </>
-              ) : (
-                <Link to="/profile">{t('navbar.profile')}</Link>
-              )}
-              <Link to="/logout">{t('navbar.logout')}</Link>
-            </>
-          ) : (
-            <Link to="/login">{t('navbar.login')}</Link>
-          )}
-          <LanguageSwitcher className="language-switcher " />
+        <div className="dropdown-container ">
+            <span className={`dropdown-trigger ${isDropdownOpen ? 'hide-label' : ''}`} onClick={toggleDropdown}>
+              All American Handyman
+            </span>
+            {isDropdownOpen && (
+              <div className="dropdown-menu navbar-links">
+                <Link to="/" className="dropdown-option" onClick={closeDropdown}>
+                  {t('navbar.home')}
+                </Link>
+                <Link to="/about" className="dropdown-option" onClick={closeDropdown}>
+                  {t('navbar.about')}
+                </Link>
+                <Link to="/contact" className="dropdown-option" onClick={closeDropdown}>
+                  {t('navbar.contact')}
+                </Link>
+                {isLoggedIn ? (
+                  <>
+                    {isAdmin ? (
+                      <>
+                        <Link to="/profile" className="dropdown-option" onClick={closeDropdown}>
+                          {t('navbar.profile')}
+                        </Link>
+                        <Link to="/work" className="dropdown-option" onClick={closeDropdown}>
+                          {t('navbar.work')}
+                        </Link>
+                        <Link to="/admin" className="dropdown-option" onClick={closeDropdown}>
+                          {t('navbar.admin')}
+                        </Link>
+                      </>
+                    ) : (
+                      <Link to="/profile" className="dropdown-option" onClick={closeDropdown}>
+                        {t('navbar.profile')}
+                      </Link>
+                    )}
+                    <Link to="/logout" className="dropdown-option" onClick={closeDropdown}>
+                      {t('navbar.logout')}
+                    </Link>
+                  </>
+                ) : (
+                  <Link to="/login" className="dropdown-option" onClick={closeDropdown}>
+                    {t('navbar.login')}
+                  </Link>
+                )}
+              </div>
+              
+            )}
+              
+          </div>
+        <div className="">
+        <LanguageSwitcher className="language-switcher " />
         </div>
       </div>
     </nav>

@@ -117,18 +117,23 @@ h3 {
   .social-icons {
     font-size: 10px;
     margin-top: 10px;
+    flex-direction: column;
   }
 
   .social-icons a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background-color: #002868;
     color: #fff;
     transition: background-color 0.3s ease;
+  }
+  
+  .footer-copyright{
+    font-size: 12px;
   }
 
   .logo1 {
@@ -136,6 +141,19 @@ h3 {
     height: auto;
     max-width: 80px; /* Adjust the maximum width as needed */
   }
+
+  .footer-cookiepolicy1:hover {
+    background-image: linear-gradient(to right, #C60C30, #002868);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .footer-cookiepolicy2:hover {
+    background-image: linear-gradient(to right, #C60C30, #002868);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
 }
 
 @media screen and (min-width: 481px) and (max-width: 917px) {
