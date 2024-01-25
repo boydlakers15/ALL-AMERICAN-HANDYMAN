@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/boydlakers15/ALL-AMERICAN-HANDYMAN/static/css/main.2fee041b.css",
+    "main.js": "/boydlakers15/ALL-AMERICAN-HANDYMAN/static/js/main.461e1acb.js",
+    "static/media/background.mp4": "/boydlakers15/ALL-AMERICAN-HANDYMAN/static/media/background.ce105eadcb54cc785c12.mp4",
+    "static/media/Frankie_Logo.png": "/boydlakers15/ALL-AMERICAN-HANDYMAN/static/media/Frankie_Logo.6a6828bec5a0b51bd66a.png",
+    "static/media/Frank.jpg": "/boydlakers15/ALL-AMERICAN-HANDYMAN/static/media/Frank.3bcd3181736a8c1ad4ae.jpg",
+    "index.html": "/boydlakers15/ALL-AMERICAN-HANDYMAN/index.html",
+    "main.2fee041b.css.map": "/boydlakers15/ALL-AMERICAN-HANDYMAN/static/css/main.2fee041b.css.map",
+    "main.461e1acb.js.map": "/boydlakers15/ALL-AMERICAN-HANDYMAN/static/js/main.461e1acb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2fee041b.css",
+    "static/js/main.461e1acb.js"
+  ]
+}
