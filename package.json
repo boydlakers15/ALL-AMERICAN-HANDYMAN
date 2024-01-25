@@ -1,6 +1,6 @@
 {
   "name": "all-american-handyman",
-  "version": "0.1.0",
+  "homepage": "https://boydlakers15.github.io/",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.6.1",
@@ -25,6 +25,7 @@
     "dotenv": "^16.0.3",
     "framer-motion": "^10.12.16",
     "fs": "^0.0.1-security",
+    "gh-pages": "^6.1.1",
     "i18next": "^22.5.0",
     "i18next-browser-languagedetector": "^7.0.1",
     "js-cookie": "^3.0.5",
@@ -53,6 +54,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
