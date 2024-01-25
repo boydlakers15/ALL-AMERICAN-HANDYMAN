@@ -1,6 +1,6 @@
 {
   "name": "all-american-handyman",
-  "homepage": "https://boydlakers15.github.io/",
+  "homepage": "https://github.com/boydlakers15/ALL-AMERICAN-HANDYMAN/",
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.6.1",
